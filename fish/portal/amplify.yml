@@ -1,0 +1,26 @@
+version: 1
+
+# AWS Amplify app build specification - checks out HEAD of supplied branch
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing build dependencies..."
+        - corepack enable
+        - corepack prepare pnpm@latest-8 --activate
+        - pnpm install
+    build:
+      commands:
+        - echo "Build started on $(date)"
+        - pnpm run build
+    postBuild:
+      commands:
+        - echo "Build completed on $(date)"
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - pnpm/**/*

@@ -1,0 +1,27 @@
+version: 1
+
+# AWS Amplify app build specification - checks out HEAD of supplied branch
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing build dependencies..."
+        - yarn install
+        - echo "Test started on $(date)"
+        - yarn test:noWatch
+        - echo "Test completed on $(date)"
+    build:
+      commands:
+        - echo "Build started on $(date)"
+        - yarn run build
+    postBuild:
+      commands:
+        - echo "Build completed on $(date)"
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

@@ -1,0 +1,41 @@
+version: 0.2
+
+# Buildspec for AWS Amplify app setup as 'Deploy without Git provider',
+#  and manual deployment method 'S3 Bucket'.
+#
+# Requires the following Environment Variables set in either
+#  build project (CodeBuild) or pipeline (CodePipeline):
+#
+# AWS_ACCOUNT_ID - (CodeBuild) account-ID (e.g. 123456789012)
+# AWS_DEFAULT_REGION - (CodeBuild) region-ID (e.g. eu-west-2)
+# PROJECT_NAME - (CodeBuild) The build project name (e.g. dog-portal)
+# DEPLOY_ENV - (CodePipeline) the deployment environment (e.g. dev, staging, etc.)
+# AMPLIFY_WEBHOOK_URL - (CodePipeline) value of `/dog-portal/amplify_webhook_url/<DEPLOY_ENV>` parameter (see: AWS Systems Manager -> Parameter Store)
+
+env:
+  variables:
+    AWS_ACCOUNT_ID: "123456789123"
+    AWS_DEFAULT_REGION: "eu-west-2"
+    PROJECT_NAME: "dog-portal"
+phases:
+  pre_build:
+    commands:
+      - echo "Get the deployment tag from AWS Systems Manager Parameter Store in to Amazon ECR..."
+      - DEPLOY_TAG=$(aws ssm get-parameter --region "${AWS_DEFAULT_REGION}" --name "${PROJECT_NAME}/tag/${DEPLOY_ENV}" --with-decryption --output text --query Parameter.Value)
+      - echo "Git checkout the deployment tag..."
+      - git checkout "${DEPLOY_TAG}"
+      - echo "Installing dependencies..."
+      - yarn install
+  build:
+    commands:
+      - echo "Build started on $(date)"
+      - yarn run build
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
+      - cd build || exit
+      - zip -r build.zip .
+      - echo "Uploading to S3..."
+      - aws s3 cp build.zip "s3://${PROJECT_NAME}-${DEPLOY_ENV}/build.zip"
+      - echo Trigger a deployment in AWS Amplify, which uses the compressed build artifact stored in S3 as source...
+      - curl -X POST "${AMPLIFY_WEBHOOK_URL}" -H "cache-control:no-cache" -d ""

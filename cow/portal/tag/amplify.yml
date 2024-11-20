@@ -1,0 +1,30 @@
+version: 1
+
+# AWS Amplify app build specification - checks out DEPLOY_TAG of supplied branch
+#
+# Requires the following Environment Variables:
+#
+# DEPLOY_TAG - The git tag to be used for deployment (e.g. v1.2.3)
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Checkout the git deployment tag..."
+        - git checkout "${DEPLOY_TAG}"
+        - echo "Installing build dependencies..."
+        - npm install
+    build:
+      commands:
+        - echo "Build started on $(date)"
+        - npm run build
+    postBuild:
+      commands:
+        - echo "Build completed on $(date)"
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

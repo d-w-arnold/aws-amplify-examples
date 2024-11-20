@@ -1,0 +1,206 @@
+[
+    {
+        "source": "https://www.dog.com",
+        "target": "https://dog.com",
+        "status": "301",
+        "condition": null
+    },
+    {
+        "source": "https://www.store.dog.com",
+        "target": "https://store.dog.com",
+        "status": "301",
+        "condition": null
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<AT>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<BE>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<BG>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<HR>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<CY>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<CZ>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<DK>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<EE>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<FI>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<FR>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<DE>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<GR>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<HU>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<IE>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<IT>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<LV>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<LT>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<LU>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<MT>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<NL>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<PL>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<PT>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<RO>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<SK>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<SI>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<ES>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.eu.store.dog.com",
+        "status": "301",
+        "condition": "<SE>"
+    },
+    {
+        "source": "https://store.dog.com",
+        "target": "https://cloudfront.uk.store.dog.com",
+        "status": "301",
+        "condition": null
+    },
+    {
+        "source": "/privacy-policy",
+        "target": "https://portal.dog.com/privacy-policy",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "/<*>",
+        "target": "https://store.dog.com",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "/<*>",
+        "target": "https://www.foobar.co.uk/our-solutions/dog/",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>",
+        "target": "/index.html",
+        "status": "200",
+        "condition": null
+    }
+]
